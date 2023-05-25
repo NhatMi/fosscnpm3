@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+@*<div class="header">
+        <div class="header-main">
+            <h1>ĐĂNG NHẬP</h1>
+            <div class="header-bottom">
+                <div class="header-right w3agile">
+
+                    <div class="header-left-bottom agileinfo">
+
+                        <form action="#" method="post">
+                            <input type="text" value="Tên đăng nhập" name="name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Tên đăng nhập';}" />
+                            <input type="password" value="Mật khẩu" name="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mật khẩu';}" />
+                            <div class="remember">
+                                <span class="checkbox1">
+                                    <label class="checkbox"><input type="checkbox" name="" checked=""><i> </i>Nhớ tôi</label>
+                                </span>
+                                <div class="forgot">
+                                    <h6><a href="#">Quên mật khẩu?</a></h6>
+                                </div>
+                                <div class="clear"> </div>
+                            </div>
+
+                            <input type="submit" value="Đăng nhập">
+                        </form>
+                        <div class="header-left-top">
+                            <div class="sign-up"> <h2>Hoặc</h2> </div>
+
+                        </div>
+                        <div class="header-social wthree">
+                            <a href="https://www.facebook.com/nhatminh.pa.vnag" class="face"><h5>Facebook</h5></a>
+
+                            <a href="https://www.google.com/intl/vi/gmail/about/" class="twitt"><h5>Gmail</h5></a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+*@
+<h4 style="color:red; text-align:center"> @ViewBag.Thongbao</h4>
+<table align="center">
+    <h3 style="text-align:center">ĐĂNG NHẬP</h3>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <tr style="height:40px">
+            <td> Tên đăng nhật:</td>
+            <td>
+                @Html.TextBox("TenDN")
+                @ViewData["Loil"]
+            </td>
+        </tr>
+        <tr style="height:40px">
+            <td align="right"> Mật khẩu:</td>
+            <td>
+                @Html.Password("Matkhau")
+                @ViewData["Loi2"]
+            </td>
+        </tr>
+        <tr style="height:40px">
+            <td></td>
+            <td>
+                <input type="Submit" value="Đăng nhập" />
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,7 @@
+﻿@model IEnumerable<MvcBookStore.Models.NHAXUATBAN>
+
+@foreach (var item in Model)
+{
+    <a href="@Url.Action("SPTheoNXS", "BookStore", new {id=item.MaNXB})" class="nav-item nav-link">@item.TenNXB</a>
+}
+
